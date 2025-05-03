@@ -7,8 +7,17 @@ from entities import Car, Obstacle
 from environment import *
 from visual_effects import *
 from game_mechanics import generate_obstacles
+from menu import show_menu 
 
 def main():
+    # Mostrar o menu antes de iniciar o jogo
+    choice = show_menu(screen)
+    
+    # Se o jogador não escolher iniciar, retornar
+    if choice != "start":
+        return
+    
+    # Inicializar o jogo
     car = Car()
     obstacles = []
     particles = []
